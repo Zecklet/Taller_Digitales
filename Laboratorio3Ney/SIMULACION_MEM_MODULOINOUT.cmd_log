@@ -2,3 +2,15 @@ xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT
 xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 
 xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 
 xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 
+xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc3s200-ft256-4 SIMULACION_MEM_MODULOINOUT.ngc SIMULACION_MEM_MODULOINOUT.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o SIMULACION_MEM_MODULOINOUT_map.ncd SIMULACION_MEM_MODULOINOUT.ngd SIMULACION_MEM_MODULOINOUT.pcf 
+par -w -intstyle ise -ol high -t 1 SIMULACION_MEM_MODULOINOUT_map.ncd SIMULACION_MEM_MODULOINOUT.ncd SIMULACION_MEM_MODULOINOUT.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SIMULACION_MEM_MODULOINOUT.twx SIMULACION_MEM_MODULOINOUT.ncd -o SIMULACION_MEM_MODULOINOUT.twr SIMULACION_MEM_MODULOINOUT.pcf 
+xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 
+xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc3s200-ft256-4 SIMULACION_MEM_MODULOINOUT.ngc SIMULACION_MEM_MODULOINOUT.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o SIMULACION_MEM_MODULOINOUT_map.ncd SIMULACION_MEM_MODULOINOUT.ngd SIMULACION_MEM_MODULOINOUT.pcf 
+par -w -intstyle ise -ol high -t 1 SIMULACION_MEM_MODULOINOUT_map.ncd SIMULACION_MEM_MODULOINOUT.ncd SIMULACION_MEM_MODULOINOUT.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SIMULACION_MEM_MODULOINOUT.twx SIMULACION_MEM_MODULOINOUT.ncd -o SIMULACION_MEM_MODULOINOUT.twr SIMULACION_MEM_MODULOINOUT.pcf 
+xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/SIMULACION_MEM_MODULOINOUT.syr" 

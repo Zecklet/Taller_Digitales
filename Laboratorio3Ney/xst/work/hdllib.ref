@@ -1,3 +1,6 @@
-MO SIMULACION_MEM_MODULOINOUT NULL SIMULACION_MEM_MODULOINOUT.v vlg4C/_s_i_m_u_l_a_c_i_o_n___m_e_m___m_o_d_u_l_o_i_n_o_u_t.bin 1379797663
-MO MEMORIA NULL MEMORIA.v vlg3E/_m_e_m_o_r_i_a.bin 1379797663
-MO ModuloInOut NULL ModuloInOut.v vlg4F/_modulo_in_out.bin 1379797663
+MO SIMULACION_MEM_MODULOINOUT NULL SIMULACION_MEM_MODULOINOUT.v vlg4C/_s_i_m_u_l_a_c_i_o_n___m_e_m___m_o_d_u_l_o_i_n_o_u_t.bin 1379881270
+MO ram_sp_sr_sw NULL RAM.v vlg7F/ram__sp__sr__sw.bin 1379890538
+MO MEMORIA NULL MEMORIA.v vlg3E/_m_e_m_o_r_i_a.bin 1379881270
+MO ModuloInOut NULL ModuloInOut.v vlg4F/_modulo_in_out.bin 1379881270
+MO RAM NULL RAM.v vlg14/_r_a_m.bin 1379881107
+MO ram256x8 NULL RAM.v vlg4D/ram256x8.bin 1379881165

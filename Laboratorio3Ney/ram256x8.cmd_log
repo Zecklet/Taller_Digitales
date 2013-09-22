@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Zeck/Laboratorio3Ney/ram256x8.xst" -ofn "C:/Users/Zeck/Laboratorio3Ney/ram256x8.syr" 

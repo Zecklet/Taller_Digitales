@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: SIMULACION_MEM_MODULOINOUT.prj
 
@@ -167,7 +167,7 @@ Unit <MEMORIA> synthesized.
 
 Synthesizing Unit <ModuloInOut>.
     Related source file is "ModuloInOut.v".
-    Found 4-bit tristate buffer for signal <InOut<3:0>>.
+    Found 4-bit tristate buffer for signal <InOut>.
     Summary:
 	inferred   4 Tristate(s).
 Unit <ModuloInOut> synthesized.
@@ -186,9 +186,8 @@ Macro Statistics
  4-bit latch                                           : 4
 # Multiplexers                                         : 1
  4-bit 4-to-1 multiplexer                              : 1
-# Tristates                                            : 5
- 1-bit tristate buffer                                 : 4
- 4-bit tristate buffer                                 : 1
+# Tristates                                            : 2
+ 4-bit tristate buffer                                 : 2
 
 =========================================================================
 
@@ -211,22 +210,423 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2040 - Unit SIMULACION_MEM_MODULOINOUT: 4 multi-source signals are replaced by logic (pull-up yes): Salida<0>_MLTSRCEDGE, Salida<1>_MLTSRCEDGE, Salida<2>_MLTSRCEDGE, Salida<3>_MLTSRCEDGE.
-ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<3> are sharing the same enable signal conversor/WE_inv
-ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<2> are sharing the same enable signal conversor/WE_inv
-ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<1> are sharing the same enable signal conversor/WE_inv
-ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<0> are sharing the same enable signal conversor/WE_inv
-ERROR:Xst:415 - Synthesis failed
+WARNING:Xst:2040 - Unit SIMULACION_MEM_MODULOINOUT: 4 multi-source signals are replaced by logic (pull-up yes): Salida<0>, Salida<1>, Salida<2>, Salida<3>.
+
+Optimizing unit <SIMULACION_MEM_MODULOINOUT> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SIMULACION_MEM_MODULOINOUT, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SIMULACION_MEM_MODULOINOUT.ngr
+Top Level Output File Name         : SIMULACION_MEM_MODULOINOUT
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 21
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 12
+#      MUXF5                       : 4
+# FlipFlops/Latches                : 16
+#      LDE                         : 12
+#      LDE_1                       : 4
+# IO Buffers                       : 11
+#      IBUF                        : 7
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                       13  out of   1920     0%  
+ Number of Slice Flip Flops:             16  out of   3840     0%  
+ Number of 4 input LUTs:                 17  out of   3840     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  11  out of    173     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.54 secs
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------+------------------------+-------+
+Clock Signal                                 | Clock buffer(FF name)  | Load  |
+---------------------------------------------+------------------------+-------+
+men/mem_3_cmp_eq0000(men/mem_3_cmp_eq00001:O)| NONE(*)(men/mem_3_3)   | 4     |
+men/mem_2_cmp_eq0000(men/mem_2_cmp_eq00001:O)| NONE(*)(men/mem_2_3)   | 4     |
+men/mem_1_cmp_eq0000(men/mem_1_cmp_eq00001:O)| NONE(*)(men/mem_1_3)   | 4     |
+men/mem_0_not0001(men/mem_0_not00011:O)      | NONE(*)(men/mem_0_3)   | 4     |
+---------------------------------------------+------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.163ns (Maximum Frequency: 240.211MHz)
+   Minimum input arrival time before clock: 4.812ns
+   Maximum output required time after clock: 10.525ns
+   Maximum combinational path delay: 11.174ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'men/mem_3_cmp_eq0000'
+  Clock period: 4.036ns (frequency: 247.770MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               4.036ns (Levels of Logic = 3)
+  Source:            men/mem_3_3 (LATCH)
+  Destination:       men/mem_3_3 (LATCH)
+  Source Clock:      men/mem_3_cmp_eq0000 falling
+  Destination Clock: men/mem_3_cmp_eq0000 falling
+
+  Data Path: men/mem_3_3 to men/mem_3_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.633   0.869  men/mem_3_3 (men/mem_3_3)
+     LUT3:I2->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_G (N7)
+     MUXF5:I1->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.000  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     LDE:D                     0.203          men/mem_3_3
+    ----------------------------------------
+    Total                      4.036ns (2.298ns logic, 1.738ns route)
+                                       (56.9% logic, 43.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'men/mem_2_cmp_eq0000'
+  Clock period: 4.163ns (frequency: 240.211MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               4.163ns (Levels of Logic = 3)
+  Source:            men/mem_2_3 (LATCH)
+  Destination:       men/mem_2_3 (LATCH)
+  Source Clock:      men/mem_2_cmp_eq0000 falling
+  Destination Clock: men/mem_2_cmp_eq0000 falling
+
+  Data Path: men/mem_2_3 to men/mem_2_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.633   0.996  men/mem_2_3 (men/mem_2_3)
+     LUT3:I1->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_G (N7)
+     MUXF5:I1->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.000  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     LDE:D                     0.203          men/mem_2_3
+    ----------------------------------------
+    Total                      4.163ns (2.298ns logic, 1.865ns route)
+                                       (55.2% logic, 44.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'men/mem_1_cmp_eq0000'
+  Clock period: 4.036ns (frequency: 247.770MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               4.036ns (Levels of Logic = 3)
+  Source:            men/mem_1_3 (LATCH)
+  Destination:       men/mem_1_3 (LATCH)
+  Source Clock:      men/mem_1_cmp_eq0000 falling
+  Destination Clock: men/mem_1_cmp_eq0000 falling
+
+  Data Path: men/mem_1_3 to men/mem_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.633   0.869  men/mem_1_3 (men/mem_1_3)
+     LUT3:I2->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_F (N6)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.000  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     LDE:D                     0.203          men/mem_1_3
+    ----------------------------------------
+    Total                      4.036ns (2.298ns logic, 1.738ns route)
+                                       (56.9% logic, 43.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'men/mem_0_not0001'
+  Clock period: 4.163ns (frequency: 240.211MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               4.163ns (Levels of Logic = 3)
+  Source:            men/mem_0_3 (LATCH)
+  Destination:       men/mem_0_3 (LATCH)
+  Source Clock:      men/mem_0_not0001 rising
+  Destination Clock: men/mem_0_not0001 rising
+
+  Data Path: men/mem_0_3 to men/mem_0_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q            1   0.633   0.996  men/mem_0_3 (men/mem_0_3)
+     LUT3:I1->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_F (N6)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.000  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     LDE_1:D                   0.203          men/mem_0_3
+    ----------------------------------------
+    Total                      4.163ns (2.298ns logic, 1.865ns route)
+                                       (55.2% logic, 44.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'men/mem_3_cmp_eq0000'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              4.812ns (Levels of Logic = 4)
+  Source:            ADDR<0> (PAD)
+  Destination:       men/mem_3_3 (LATCH)
+  Destination Clock: men/mem_3_cmp_eq0000 falling
+
+  Data Path: ADDR<0> to men/mem_3_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.821   1.457  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_F (N01)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5 (men/_varindex0000<0>)
+     LUT3:I2->O            5   0.551   0.000  Salida<0>_MLTSRCEDGELogicTrst1 (Salida_0_OBUF)
+     LDE:D                     0.203          men/mem_3_0
+    ----------------------------------------
+    Total                      4.812ns (2.486ns logic, 2.326ns route)
+                                       (51.7% logic, 48.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'men/mem_2_cmp_eq0000'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              4.812ns (Levels of Logic = 4)
+  Source:            ADDR<0> (PAD)
+  Destination:       men/mem_2_3 (LATCH)
+  Destination Clock: men/mem_2_cmp_eq0000 falling
+
+  Data Path: ADDR<0> to men/mem_2_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.821   1.457  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_F (N01)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5 (men/_varindex0000<0>)
+     LUT3:I2->O            5   0.551   0.000  Salida<0>_MLTSRCEDGELogicTrst1 (Salida_0_OBUF)
+     LDE:D                     0.203          men/mem_2_0
+    ----------------------------------------
+    Total                      4.812ns (2.486ns logic, 2.326ns route)
+                                       (51.7% logic, 48.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'men/mem_1_cmp_eq0000'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              4.812ns (Levels of Logic = 4)
+  Source:            ADDR<0> (PAD)
+  Destination:       men/mem_1_3 (LATCH)
+  Destination Clock: men/mem_1_cmp_eq0000 falling
+
+  Data Path: ADDR<0> to men/mem_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.821   1.457  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_F (N01)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5 (men/_varindex0000<0>)
+     LUT3:I2->O            5   0.551   0.000  Salida<0>_MLTSRCEDGELogicTrst1 (Salida_0_OBUF)
+     LDE:D                     0.203          men/mem_1_0
+    ----------------------------------------
+    Total                      4.812ns (2.486ns logic, 2.326ns route)
+                                       (51.7% logic, 48.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'men/mem_0_not0001'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              4.812ns (Levels of Logic = 4)
+  Source:            ADDR<0> (PAD)
+  Destination:       men/mem_0_3 (LATCH)
+  Destination Clock: men/mem_0_not0001 rising
+
+  Data Path: ADDR<0> to men/mem_0_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.821   1.457  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_F (N01)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5 (men/_varindex0000<0>)
+     LUT3:I2->O            5   0.551   0.000  Salida<0>_MLTSRCEDGELogicTrst1 (Salida_0_OBUF)
+     LDE_1:D                   0.203          men/mem_0_0
+    ----------------------------------------
+    Total                      4.812ns (2.486ns logic, 2.326ns route)
+                                       (51.7% logic, 48.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'men/mem_0_not0001'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              10.525ns (Levels of Logic = 4)
+  Source:            men/mem_0_3 (LATCH)
+  Destination:       Salida<3> (PAD)
+  Source Clock:      men/mem_0_not0001 rising
+
+  Data Path: men/mem_0_3 to Salida<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q            1   0.633   0.996  men/mem_0_3 (men/mem_0_3)
+     LUT3:I1->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_F (N6)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.921  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     OBUF:I->O                 5.644          Salida_3_OBUF (Salida<3>)
+    ----------------------------------------
+    Total                     10.525ns (7.739ns logic, 2.786ns route)
+                                       (73.5% logic, 26.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'men/mem_1_cmp_eq0000'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              10.398ns (Levels of Logic = 4)
+  Source:            men/mem_1_3 (LATCH)
+  Destination:       Salida<3> (PAD)
+  Source Clock:      men/mem_1_cmp_eq0000 falling
+
+  Data Path: men/mem_1_3 to Salida<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.633   0.869  men/mem_1_3 (men/mem_1_3)
+     LUT3:I2->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_F (N6)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.921  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     OBUF:I->O                 5.644          Salida_3_OBUF (Salida<3>)
+    ----------------------------------------
+    Total                     10.398ns (7.739ns logic, 2.659ns route)
+                                       (74.4% logic, 25.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'men/mem_2_cmp_eq0000'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              10.525ns (Levels of Logic = 4)
+  Source:            men/mem_2_3 (LATCH)
+  Destination:       Salida<3> (PAD)
+  Source Clock:      men/mem_2_cmp_eq0000 falling
+
+  Data Path: men/mem_2_3 to Salida<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.633   0.996  men/mem_2_3 (men/mem_2_3)
+     LUT3:I1->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_G (N7)
+     MUXF5:I1->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.921  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     OBUF:I->O                 5.644          Salida_3_OBUF (Salida<3>)
+    ----------------------------------------
+    Total                     10.525ns (7.739ns logic, 2.786ns route)
+                                       (73.5% logic, 26.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'men/mem_3_cmp_eq0000'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              10.398ns (Levels of Logic = 4)
+  Source:            men/mem_3_3 (LATCH)
+  Destination:       Salida<3> (PAD)
+  Source Clock:      men/mem_3_cmp_eq0000 falling
+
+  Data Path: men/mem_3_3 to Salida<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.633   0.869  men/mem_3_3 (men/mem_3_3)
+     LUT3:I2->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_2_G (N7)
+     MUXF5:I1->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5_2 (men/_varindex0000<3>)
+     LUT3:I2->O            5   0.551   0.921  Salida<3>_MLTSRCEDGELogicTrst1 (Salida_3_OBUF)
+     OBUF:I->O                 5.644          Salida_3_OBUF (Salida<3>)
+    ----------------------------------------
+    Total                     10.398ns (7.739ns logic, 2.659ns route)
+                                       (74.4% logic, 25.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 20 / 4
+-------------------------------------------------------------------------
+Delay:               11.174ns (Levels of Logic = 5)
+  Source:            ADDR<0> (PAD)
+  Destination:       Salida<3> (PAD)
+
+  Data Path: ADDR<0> to Salida<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.821   1.457  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  men/Mmux__varindex0000_2_f5_F (N01)
+     MUXF5:I0->O           1   0.360   0.869  men/Mmux__varindex0000_2_f5 (men/_varindex0000<0>)
+     LUT3:I2->O            5   0.551   0.921  Salida<0>_MLTSRCEDGELogicTrst1 (Salida_0_OBUF)
+     OBUF:I->O                 5.644          Salida_0_OBUF (Salida<0>)
+    ----------------------------------------
+    Total                     11.174ns (7.927ns logic, 3.247ns route)
+                                       (70.9% logic, 29.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.04 secs
  
 --> 
 
-Total memory usage is 200892 kilobytes
+Total memory usage is 202044 kilobytes
 
-Number of errors   :    5 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 
