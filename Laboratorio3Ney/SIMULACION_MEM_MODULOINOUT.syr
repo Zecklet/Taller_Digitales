@@ -1,0 +1,232 @@
+Release 14.6 - xst P.68d (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Reading design: SIMULACION_MEM_MODULOINOUT.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SIMULACION_MEM_MODULOINOUT.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SIMULACION_MEM_MODULOINOUT"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : SIMULACION_MEM_MODULOINOUT
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ModuloInOut.v" in library work
+Compiling verilog file "MEMORIA.v" in library work
+Module <ModuloInOut> compiled
+Compiling verilog file "SIMULACION_MEM_MODULOINOUT.v" in library work
+Module <MEMORIA> compiled
+Module <SIMULACION_MEM_MODULOINOUT> compiled
+No errors in compilation
+Analysis of file <"SIMULACION_MEM_MODULOINOUT.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <SIMULACION_MEM_MODULOINOUT> in library <work>.
+
+Analyzing hierarchy for module <MEMORIA> in library <work>.
+
+Analyzing hierarchy for module <ModuloInOut> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <SIMULACION_MEM_MODULOINOUT>.
+Module <SIMULACION_MEM_MODULOINOUT> is correct for synthesis.
+ 
+Analyzing module <MEMORIA> in library <work>.
+WARNING:Xst:916 - "MEMORIA.v" line 36: Delay is ignored for synthesis.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:916 - "MEMORIA.v" line 37: Delay is ignored for synthesis.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:905 - "MEMORIA.v" line 34: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <mem>
+Module <MEMORIA> is correct for synthesis.
+ 
+Analyzing module <ModuloInOut> in library <work>.
+Module <ModuloInOut> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <MEMORIA>.
+    Related source file is "MEMORIA.v".
+WARNING:Xst:647 - Input <ADDR<3:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <a> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 4-bit 4-to-1 multiplexer for signal <$varindex0000> created at line 36.
+    Found 4-bit tristate buffer for signal <b>.
+    Summary:
+	inferred   4 Multiplexer(s).
+	inferred   4 Tristate(s).
+Unit <MEMORIA> synthesized.
+
+
+Synthesizing Unit <ModuloInOut>.
+    Related source file is "ModuloInOut.v".
+    Found 4-bit tristate buffer for signal <InOut<3:0>>.
+    Summary:
+	inferred   4 Tristate(s).
+Unit <ModuloInOut> synthesized.
+
+
+Synthesizing Unit <SIMULACION_MEM_MODULOINOUT>.
+    Related source file is "SIMULACION_MEM_MODULOINOUT.v".
+Unit <SIMULACION_MEM_MODULOINOUT> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 4
+ 4-bit latch                                           : 4
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+# Tristates                                            : 5
+ 1-bit tristate buffer                                 : 4
+ 4-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 4
+ 4-bit latch                                           : 4
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2040 - Unit SIMULACION_MEM_MODULOINOUT: 4 multi-source signals are replaced by logic (pull-up yes): Salida<0>_MLTSRCEDGE, Salida<1>_MLTSRCEDGE, Salida<2>_MLTSRCEDGE, Salida<3>_MLTSRCEDGE.
+ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<3> are sharing the same enable signal conversor/WE_inv
+ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<2> are sharing the same enable signal conversor/WE_inv
+ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<1> are sharing the same enable signal conversor/WE_inv
+ERROR:Xst:2037 - Unit <SIMULACION_MEM_MODULOINOUT>: Several tristates on signal Salida<0> are sharing the same enable signal conversor/WE_inv
+ERROR:Xst:415 - Synthesis failed
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.54 secs
+ 
+--> 
+
+Total memory usage is 200892 kilobytes
+
+Number of errors   :    5 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

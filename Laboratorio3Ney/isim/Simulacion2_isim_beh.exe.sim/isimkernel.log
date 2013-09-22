@@ -1,0 +1,10 @@
+Command line:
+   Simulacion2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53258
+
+Sun Sep 22 12:07:17 2013
+
+
+ Elaboration Time: 0.0624 sec

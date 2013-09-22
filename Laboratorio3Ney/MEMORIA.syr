@@ -1,0 +1,484 @@
+Release 14.6 - xst P.68d (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.45 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.47 secs
+ 
+--> Reading design: MEMORIA.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MEMORIA.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MEMORIA"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : MEMORIA
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "MEMORIA.v" in library work
+Module <MEMORIA> compiled
+No errors in compilation
+Analysis of file <"MEMORIA.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <MEMORIA> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <MEMORIA>.
+WARNING:Xst:916 - "MEMORIA.v" line 34: Delay is ignored for synthesis.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:916 - "MEMORIA.v" line 35: Delay is ignored for synthesis.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:905 - "MEMORIA.v" line 33: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <mem>
+Module <MEMORIA> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <MEMORIA>.
+    Related source file is "MEMORIA.v".
+WARNING:Xst:647 - Input <ADDR<3:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 4-bit latch for signal <b>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 4-bit tristate buffer for signal <dataBus>.
+    Found 4-bit 4-to-1 multiplexer for signal <$varindex0000> created at line 34.
+    Found 1-bit 4-to-1 multiplexer for signal <a$varindex0000>.
+    Summary:
+	inferred   5 Multiplexer(s).
+	inferred   4 Tristate(s).
+Unit <MEMORIA> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 5
+ 4-bit latch                                           : 5
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+# Tristates                                            : 1
+ 4-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 5
+ 4-bit latch                                           : 5
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <MEMORIA> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MEMORIA, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : MEMORIA.ngr
+Top Level Output File Name         : MEMORIA
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 21
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 10
+#      MUXF5                       : 5
+# FlipFlops/Latches                : 20
+#      LD                          : 4
+#      LDE                         : 12
+#      LDE_1                       : 4
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 11
+#      IBUF                        : 3
+#      IOBUF                       : 4
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                       14  out of   1920     0%  
+ Number of Slice Flip Flops:             16  out of   3840     0%  
+ Number of 4 input LUTs:                 15  out of   3840     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  11  out of    173     6%  
+    IOB Flip Flops:                       4
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------+------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)  | Load  |
+-------------------------------------+------------------------+-------+
+mem_0_not0001(mem_0_not00011:O)      | NONE(*)(mem_0_0)       | 4     |
+mem_1_cmp_eq0000(mem_1_cmp_eq00001:O)| NONE(*)(mem_1_0)       | 4     |
+mem_2_cmp_eq0000(mem_2_cmp_eq00001:O)| NONE(*)(mem_2_0)       | 4     |
+mem_3_cmp_eq0000(mem_3_cmp_eq00001:O)| NONE(*)(mem_3_0)       | 4     |
+WR                                   | IBUF+BUFG              | 4     |
+-------------------------------------+------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 4.396ns
+   Maximum output required time after clock: 9.061ns
+   Maximum combinational path delay: 9.703ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mem_0_not0001'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.396ns (Levels of Logic = 2)
+  Source:            WR (PAD)
+  Destination:       mem_0_0 (LATCH)
+  Destination Clock: mem_0_not0001 rising
+
+  Data Path: WR to mem_0_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.821   0.877  WR_IBUF (WR_IBUF1)
+     INV:I->O             20   0.551   1.545  WR_inv1_INV_0 (WR_inv)
+     LDE_1:GE                  0.602          mem_0_3
+    ----------------------------------------
+    Total                      4.396ns (1.974ns logic, 2.422ns route)
+                                       (44.9% logic, 55.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mem_1_cmp_eq0000'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.396ns (Levels of Logic = 2)
+  Source:            WR (PAD)
+  Destination:       mem_1_0 (LATCH)
+  Destination Clock: mem_1_cmp_eq0000 falling
+
+  Data Path: WR to mem_1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.821   0.877  WR_IBUF (WR_IBUF1)
+     INV:I->O             20   0.551   1.545  WR_inv1_INV_0 (WR_inv)
+     LDE:GE                    0.602          mem_1_3
+    ----------------------------------------
+    Total                      4.396ns (1.974ns logic, 2.422ns route)
+                                       (44.9% logic, 55.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mem_2_cmp_eq0000'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.396ns (Levels of Logic = 2)
+  Source:            WR (PAD)
+  Destination:       mem_2_0 (LATCH)
+  Destination Clock: mem_2_cmp_eq0000 falling
+
+  Data Path: WR to mem_2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.821   0.877  WR_IBUF (WR_IBUF1)
+     INV:I->O             20   0.551   1.545  WR_inv1_INV_0 (WR_inv)
+     LDE:GE                    0.602          mem_2_3
+    ----------------------------------------
+    Total                      4.396ns (1.974ns logic, 2.422ns route)
+                                       (44.9% logic, 55.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mem_3_cmp_eq0000'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.396ns (Levels of Logic = 2)
+  Source:            WR (PAD)
+  Destination:       mem_3_0 (LATCH)
+  Destination Clock: mem_3_cmp_eq0000 falling
+
+  Data Path: WR to mem_3_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.821   0.877  WR_IBUF (WR_IBUF1)
+     INV:I->O             20   0.551   1.545  WR_inv1_INV_0 (WR_inv)
+     LDE:GE                    0.602          mem_3_3
+    ----------------------------------------
+    Total                      4.396ns (1.974ns logic, 2.422ns route)
+                                       (44.9% logic, 55.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'WR'
+  Total number of paths / destination ports: 12 / 4
+-------------------------------------------------------------------------
+Offset:              3.461ns (Levels of Logic = 3)
+  Source:            ADDR<0> (PAD)
+  Destination:       b_0 (LATCH)
+  Destination Clock: WR falling
+
+  Data Path: ADDR<0> to b_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   0.821   1.526  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  Mmux__varindex0000_3 (Mmux__varindex0000_3)
+     MUXF5:I1->O           1   0.360   0.000  Mmux__varindex0000_2_f5 (_varindex0000<0>)
+     LD:D                      0.203          b_0
+    ----------------------------------------
+    Total                      3.461ns (1.935ns logic, 1.526ns route)
+                                       (55.9% logic, 44.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'WR'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              7.078ns (Levels of Logic = 1)
+  Source:            b_3 (LATCH)
+  Destination:       dataBus<3> (PAD)
+  Source Clock:      WR falling
+
+  Data Path: b_3 to dataBus<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.633   0.801  b_3 (b_3)
+     IOBUF:I->IO               5.644          dataBus_3_IOBUF (dataBus<3>)
+    ----------------------------------------
+    Total                      7.078ns (6.277ns logic, 0.801ns route)
+                                       (88.7% logic, 11.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'mem_3_cmp_eq0000'
+  Total number of paths / destination ports: 4 / 1
+-------------------------------------------------------------------------
+Offset:              9.061ns (Levels of Logic = 3)
+  Source:            mem_3_0 (LATCH)
+  Destination:       almacenamiento<0> (PAD)
+  Source Clock:      mem_3_cmp_eq0000 falling
+
+  Data Path: mem_3_0 to almacenamiento<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              2   0.633   1.072  mem_3_0 (mem_3_0)
+     LUT3:I1->O            1   0.551   0.000  Mmux_a_varindex0000_4 (Mmux_a_varindex0000_4)
+     MUXF5:I0->O           1   0.360   0.801  Mmux_a_varindex0000_2_f5 (almacenamiento_0_OBUF)
+     OBUF:I->O                 5.644          almacenamiento_0_OBUF (almacenamiento<0>)
+    ----------------------------------------
+    Total                      9.061ns (7.188ns logic, 1.873ns route)
+                                       (79.3% logic, 20.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 7 / 5
+-------------------------------------------------------------------------
+Delay:               9.703ns (Levels of Logic = 4)
+  Source:            ADDR<0> (PAD)
+  Destination:       almacenamiento<0> (PAD)
+
+  Data Path: ADDR<0> to almacenamiento<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   0.821   1.526  ADDR_0_IBUF (ADDR_0_IBUF)
+     LUT3:I0->O            1   0.551   0.000  Mmux_a_varindex0000_3 (Mmux_a_varindex0000_3)
+     MUXF5:I1->O           1   0.360   0.801  Mmux_a_varindex0000_2_f5 (almacenamiento_0_OBUF)
+     OBUF:I->O                 5.644          almacenamiento_0_OBUF (almacenamiento<0>)
+    ----------------------------------------
+    Total                      9.703ns (7.376ns logic, 2.327ns route)
+                                       (76.0% logic, 24.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.97 secs
+ 
+--> 
+
+Total memory usage is 202172 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

@@ -1,0 +1,2 @@
+verilog work "netgen/par/MEMORIA_timesim.v"
+vhdl work "Simulacion.vhd"

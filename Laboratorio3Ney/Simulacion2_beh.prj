@@ -1,0 +1,3 @@
+verilog work "MEMORIA_SIMULACION.v"
+vhdl work "Simulacion2.vhd"
+verilog work "D:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"

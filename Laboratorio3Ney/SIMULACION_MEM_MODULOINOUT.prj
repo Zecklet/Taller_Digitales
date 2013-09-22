@@ -1,0 +1,3 @@
+verilog work "ModuloInOut.v"
+verilog work "MEMORIA.v"
+verilog work "SIMULACION_MEM_MODULOINOUT.v"

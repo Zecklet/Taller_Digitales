@@ -1,0 +1,149 @@
+--------------------------------------------------------------------------------
+Release 14.6 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml MEMORIA.twx MEMORIA.ncd -o MEMORIA.twr MEMORIA.pcf
+
+Design file:              MEMORIA.ncd
+Physical constraint file: MEMORIA.pcf
+Device,package,speed:     xc3s200,ft256,-4 (PRODUCTION 1.39 2013-06-08)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock ADDR<0>
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+dataBus<0>  |   -1.489(R)|    3.739(R)|mem_0_not0001     |   0.000|
+            |    0.384(F)|    1.382(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.866(F)|    4.058(F)|mem_2_cmp_eq0000  |   0.000|
+            |    0.069(F)|    1.789(F)|mem_3_cmp_eq0000  |   0.000|
+dataBus<1>  |   -1.569(R)|    3.803(R)|mem_0_not0001     |   0.000|
+            |    0.675(F)|    1.148(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.607(F)|    3.851(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -0.002(F)|    1.846(F)|mem_3_cmp_eq0000  |   0.000|
+dataBus<2>  |   -1.769(R)|    3.939(R)|mem_0_not0001     |   0.000|
+            |    0.435(F)|    1.339(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.721(F)|    3.880(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -0.323(F)|    2.117(F)|mem_3_cmp_eq0000  |   0.000|
+dataBus<3>  |   -1.834(R)|    3.991(R)|mem_0_not0001     |   0.000|
+            |    0.638(F)|    1.175(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.786(F)|    3.932(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -0.356(F)|    2.144(F)|mem_3_cmp_eq0000  |   0.000|
+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock ADDR<1>
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+dataBus<0>  |   -1.583(R)|    3.856(R)|mem_0_not0001     |   0.000|
+            |   -0.407(F)|    2.371(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -2.023(F)|    4.253(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -0.756(F)|    2.820(F)|mem_3_cmp_eq0000  |   0.000|
+dataBus<1>  |   -1.663(R)|    3.920(R)|mem_0_not0001     |   0.000|
+            |   -0.116(F)|    2.137(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.764(F)|    4.046(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -0.827(F)|    2.877(F)|mem_3_cmp_eq0000  |   0.000|
+dataBus<2>  |   -1.863(R)|    4.056(R)|mem_0_not0001     |   0.000|
+            |   -0.356(F)|    2.328(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.878(F)|    4.075(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -1.148(F)|    3.148(F)|mem_3_cmp_eq0000  |   0.000|
+dataBus<3>  |   -1.928(R)|    4.108(R)|mem_0_not0001     |   0.000|
+            |   -0.153(F)|    2.164(F)|mem_1_cmp_eq0000  |   0.000|
+            |   -1.943(F)|    4.127(F)|mem_2_cmp_eq0000  |   0.000|
+            |   -1.181(F)|    3.175(F)|mem_3_cmp_eq0000  |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock WR to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+dataBus<0>  |    7.273(F)|WR_IBUF           |   0.000|
+dataBus<1>  |    7.273(F)|WR_IBUF           |   0.000|
+dataBus<2>  |    7.273(F)|WR_IBUF           |   0.000|
+dataBus<3>  |    7.273(F)|WR_IBUF           |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock ADDR<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+WR             |   -0.305|   -0.305|    2.222|    2.222|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ADDR<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+WR             |   -0.399|   -0.399|    1.431|    1.431|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock WR
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ADDR<0>        |         |         |    5.882|    5.957|
+ADDR<1>        |         |         |    5.882|    5.957|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+-----------------+---------+
+Source Pad     |Destination Pad  |  Delay  |
+---------------+-----------------+---------+
+ADDR<0>        |almacenamiento<0>|    6.635|
+ADDR<1>        |almacenamiento<1>|    6.653|
+ADDR<2>        |almacenamiento<2>|    6.636|
+ADDR<3>        |almacenamiento<3>|    7.339|
+WR             |dataBus<0>       |    7.607|
+WR             |dataBus<1>       |    7.611|
+WR             |dataBus<2>       |    7.608|
+WR             |dataBus<3>       |    7.951|
+---------------+-----------------+---------+
+
+
+Analysis completed Fri Sep 20 02:43:42 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 102 MB
+
+
+

@@ -1,0 +1,25 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Zeck/Laboratorio3Ney/Simulacion2_isim_beh.exe" -prj "C:/Users/Zeck/Laboratorio3Ney/Simulacion2_beh.prj" "work.Simulacion2" "work.glbl" 
+ISim P.68d (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Zeck/Laboratorio3Ney/MEMORIA_SIMULACION.v" into library work
+Analyzing Verilog file "D:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "C:/Users/Zeck/Laboratorio3Ney/Simulacion2.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 105696 KB
+Fuse CPU Usage: 452 ms
+Compiling module glbl
+Compiling module MEMORIA_SIMULACION
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package vl_types
+Compiling architecture behavior of entity simulacion2
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 4 VHDL Units
+Compiled 2 Verilog Units
+Built simulation executable C:/Users/Zeck/Laboratorio3Ney/Simulacion2_isim_beh.exe
+Fuse Memory Usage: 118988 KB
+Fuse CPU Usage: 545 ms

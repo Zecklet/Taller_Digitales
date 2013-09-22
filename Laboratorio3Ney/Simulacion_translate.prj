@@ -1,0 +1,2 @@
+verilog work "netgen/translate/MEMORIA_translate.v"
+vhdl work "Simulacion.vhd"

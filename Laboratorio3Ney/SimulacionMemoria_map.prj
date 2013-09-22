@@ -1,0 +1,2 @@
+verilog work "netgen/map/MEMORIA_map.v"
+vhdl work "SimulacionMemoria.vhd"

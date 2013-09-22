@@ -1,0 +1,34 @@
+Release 14.6 - netgen P.68d (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -s 4 -pcf MEMORIA.pcf -sdf_anno true
+-sdf_path netgen/map -insert_glbl true -w -dir netgen/map -ofmt verilog -sim
+MEMORIA_map.ncd MEMORIA_map.v  
+
+Read and Annotate design 'MEMORIA_map.ncd' ...
+Loading device for application Rf_Device from file '3s200.nph' in environment
+D:\Xilinx\14.6\ISE_DS\ISE\.
+   "MEMORIA" is an NCD, version 3.2, device xc3s200, package ft256, speed -4
+Loading constraints from 'MEMORIA.pcf'...
+The speed grade (-4) differs from the speed grade specified in the .ncd file
+(-4).
+The number of routable networks is 14
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing Verilog SDF file 'netgen\map\memoria_map.sdf' ...
+Writing Verilog netlist file
+'C:\Users\Zeck\Laboratorio3Ney\netgen\map\MEMORIA_map.v' ...
+INFO:NetListWriters:633 - The generated Verilog netlist contains Xilinx SIMPRIM
+   simulation primitives and has to be used with SIMPRIM simulation library for
+   correct compilation and simulation. 
+INFO:NetListWriters - Xilinx recommends running separate simulations to check
+   for setup by specifying the MAX field in the SDF file and for hold by
+   specifying the MIN field in the SDF file. Please refer to Simulator
+   documentation for more details on specifying MIN and MAX field in the SDF.
+INFO:NetListWriters:665 - For more information on how to pass the SDF switches
+   to the simulator, see your Simulator tool documentation.
+Number of warnings: 0
+Number of info messages: 3
+Total memory usage is 127424 kilobytes
